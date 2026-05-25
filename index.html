@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Manpower"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2ODAgNjgwIj4KPGRlZnM+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA1MGExOCIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGExNDI4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImNocm9tZSIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPgogICAgPHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNjOGQ4ZTgiLz4KICAgIDxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjN2E5YWI4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzRhNmE4OCIvPgogICAgPHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNkMGUwZjAiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2EwYjhkMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGNsaXBQYXRoIGlkPSJpY29uQ2xpcCI+CiAgICA8cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiByeD0iMTIwIi8+CiAgPC9jbGlwUGF0aD4KPC9kZWZzPgo8cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiByeD0iMTIwIiBmaWxsPSIjMDUwYTE4Ii8+CjxnIGNsaXAtcGF0aD0idXJsKCNpY29uQ2xpcCkiPgogIDxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjYmcpIi8+CgogIDwhLS0gQm9sZCB2aXZpZCB3YXZlcyAtLT4KICA8cGF0aCBkPSJNNDAgNTAwIFExNDAgNDQwIDI2MCA0NzUgUTM4MCA1MTAgNTAwIDQ1NSBRNTgwIDQyMCA2NDAgNDQwIEw2NDAgNzAwIEw0MCA3MDAgWiIgZmlsbD0iIzFhNGE5YSIgb3BhY2l0eT0iMSIvPgogIDxwYXRoIGQ9Ik00MCA1MzAgUTE2MCA0ODAgMjgwIDUxMCBRNDAwIDU0MCA1MjAgNDkwIFE1OTAgNDYwIDY0MCA0NzUgTDY0MCA3MDAgTDQwIDcwMCBaIiBmaWxsPSIjMGQyZDZlIiBvcGFjaXR5PSIxIi8+CiAgPHBhdGggZD0iTTQwIDU2NSBRMTgwIDUyNSAzMDAgNTQ4IFE0MjAgNTcwIDU0MCA1MzAgUTYwMCA1MTAgNjQwIDUyMCBMNjQwIDcwMCBMNDAgNzAwIFoiIGZpbGw9IiMxZTVjYjgiIG9wYWNpdHk9IjAuODUiLz4KICA8cGF0aCBkPSJNNDAgNTk1IFEyMDAgNTY1IDMzMCA1ODIgUTQ1MCA1OTggNTcwIDU2OCBRNjE1IDU1NSA2NDAgNTYyIEw2NDAgNzAwIEw0MCA3MDAgWiIgZmlsbD0iIzBhMjA1MCIgb3BhY2l0eT0iMSIvPgogIDxwYXRoIGQ9Ik00MCA2MjUgUTIyMCA2MDAgMzYwIDYxNCBRNDgwIDYyNiA2MDAgNjAwIEw2NDAgNTk1IEw2NDAgNzAwIEw0MCA3MDAgWiIgZmlsbD0iIzE1MmQ2YSIgb3BhY2l0eT0iMC45Ii8+CgogIDwhLS0gV2F2ZSBzaGltbWVyIGxpbmVzIC0tPgogIDxwYXRoIGQ9Ik00MCA0OTggUTE0MCA0MzggMjYwIDQ3MyBRMzgwIDUwOCA1MDAgNDUzIFE1ODAgNDE4IDY0MCA0MzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRhOGFkZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIG9wYWNpdHk9IjAuOSIvPgogIDxwYXRoIGQ9Ik00MCA1MjggUTE2MCA0NzggMjgwIDUwOCBRNDAwIDUzOCA1MjAgNDg4IFE1OTAgNDU4IDY0MCA0NzMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNhN2FjYyIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIwLjgiLz4KICA8cGF0aCBkPSJNNDAgNTYzIFExODAgNTIzIDMwMCA1NDYgUTQyMCA1NjggNTQwIDUyOCBRNjAwIDUwOCA2NDAgNTE4IiBmaWxsPSJub25lIiBzdHJva2U9IiM1YTlhZWUiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC43Ii8+CiAgPHBhdGggZD0iTTQwIDU5MyBRMjAwIDU2MyAzMzAgNTgwIFE0NTAgNTk2IDU3MCA1NjYgUTYxNSA1NTMgNjQwIDU2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMmE1YWFhIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC42Ii8+CgogIDwhLS0gVG9wIHN1YnRsZSBnbG93IC0tPgogIDxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjYwMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwYTE4MzAiIG9wYWNpdHk9IjAuNiIvPgo8L2c+CjxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIHJ4PSIxMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJhNWFhYSIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIwLjgiLz4KPHRleHQgeD0iMzQwIiB5PSI0MjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIyOTAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9InVybCgjY2hyb21lKSIgbGV0dGVyLXNwYWNpbmc9Ii0xMCI+TVA8L3RleHQ+Cjx0ZXh0IHg9IjM0MCIgeT0iNDE1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMjkwIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjI1IiBsZXR0ZXItc3BhY2luZz0iLTEwIj5NUDwvdGV4dD4KPC9zdmc+"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2ODAgNjgwIj4KPGRlZnM+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA1MGExOCIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGExNDI4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImNocm9tZSIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPgogICAgPHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNjOGQ4ZTgiLz4KICAgIDxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjN2E5YWI4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzRhNmE4OCIvPgogICAgPHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNkMGUwZjAiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2EwYjhkMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPGNsaXBQYXRoIGlkPSJpY29uQ2xpcCI+CiAgICA8cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiByeD0iMTIwIi8+CiAgPC9jbGlwUGF0aD4KPC9kZWZzPgo8cmVjdCB4PSI0MCIgeT0iNDAiIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiByeD0iMTIwIiBmaWxsPSIjMDUwYTE4Ii8+CjxnIGNsaXAtcGF0aD0idXJsKCNpY29uQ2xpcCkiPgogIDxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjYmcpIi8+CgogIDwhLS0gQm9sZCB2aXZpZCB3YXZlcyAtLT4KICA8cGF0aCBkPSJNNDAgNTAwIFExNDAgNDQwIDI2MCA0NzUgUTM4MCA1MTAgNTAwIDQ1NSBRNTgwIDQyMCA2NDAgNDQwIEw2NDAgNzAwIEw0MCA3MDAgWiIgZmlsbD0iIzFhNGE5YSIgb3BhY2l0eT0iMSIvPgogIDxwYXRoIGQ9Ik00MCA1MzAgUTE2MCA0ODAgMjgwIDUxMCBRNDAwIDU0MCA1MjAgNDkwIFE1OTAgNDYwIDY0MCA0NzUgTDY0MCA3MDAgTDQwIDcwMCBaIiBmaWxsPSIjMGQyZDZlIiBvcGFjaXR5PSIxIi8+CiAgPHBhdGggZD0iTTQwIDU2NSBRMTgwIDUyNSAzMDAgNTQ4IFE0MjAgNTcwIDU0MCA1MzAgUTYwMCA1MTAgNjQwIDUyMCBMNjQwIDcwMCBMNDAgNzAwIFoiIGZpbGw9IiMxZTVjYjgiIG9wYWNpdHk9IjAuODUiLz4KICA8cGF0aCBkPSJNNDAgNTk1IFEyMDAgNTY1IDMzMCA1ODIgUTQ1MCA1OTggNTcwIDU2OCBRNjE1IDU1NSA2NDAgNTYyIEw2NDAgNzAwIEw0MCA3MDAgWiIgZmlsbD0iIzBhMjA1MCIgb3BhY2l0eT0iMSIvPgogIDxwYXRoIGQ9Ik00MCA2MjUgUTIyMCA2MDAgMzYwIDYxNCBRNDgwIDYyNiA2MDAgNjAwIEw2NDAgNTk1IEw2NDAgNzAwIEw0MCA3MDAgWiIgZmlsbD0iIzE1MmQ2YSIgb3BhY2l0eT0iMC45Ii8+CgogIDwhLS0gV2F2ZSBzaGltbWVyIGxpbmVzIC0tPgogIDxwYXRoIGQ9Ik00MCA0OTggUTE0MCA0MzggMjYwIDQ3MyBRMzgwIDUwOCA1MDAgNDUzIFE1ODAgNDE4IDY0MCA0MzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRhOGFkZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIG9wYWNpdHk9IjAuOSIvPgogIDxwYXRoIGQ9Ik00MCA1MjggUTE2MCA0NzggMjgwIDUwOCBRNDAwIDUzOCA1MjAgNDg4IFE1OTAgNDU4IDY0MCA0NzMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNhN2FjYyIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIwLjgiLz4KICA8cGF0aCBkPSJNNDAgNTYzIFExODAgNTIzIDMwMCA1NDYgUTQyMCA1NjggNTQwIDUyOCBRNjAwIDUwOCA2NDAgNTE4IiBmaWxsPSJub25lIiBzdHJva2U9IiM1YTlhZWUiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC43Ii8+CiAgPHBhdGggZD0iTTQwIDU5MyBRMjAwIDU2MyAzMzAgNTgwIFE0NTAgNTk2IDU3MCA1NjYgUTYxNSA1NTMgNjQwIDU2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMmE1YWFhIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC42Ii8+CgogIDwhLS0gVG9wIHN1YnRsZSBnbG93IC0tPgogIDxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjYwMCIgaGVpZ2h0PSIyMjAiIGZpbGw9IiMwYTE4MzAiIG9wYWNpdHk9IjAuNiIvPgo8L2c+CjxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIHJ4PSIxMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJhNWFhYSIgc3Ryb2tlLXdpZHRoPSIzIiBvcGFjaXR5PSIwLjgiLz4KPHRleHQgeD0iMzQwIiB5PSI0MjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIyOTAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9InVybCgjY2hyb21lKSIgbGV0dGVyLXNwYWNpbmc9Ii0xMCI+TVA8L3RleHQ+Cjx0ZXh0IHg9IjM0MCIgeT0iNDE1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMjkwIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjI1IiBsZXR0ZXItc3BhY2luZz0iLTEwIj5NUDwvdGV4dD4KPC9zdmc+"/>
+<meta name="theme-color" content="#111111"/>
+<title>Daily Manpower</title>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+  html,body{overflow-x:hidden;width:100%}
+  html,body,#root{height:100%;background:#111;color:#f0f0f0;font-family:'Georgia','Times New Roman',serif}
+  input,textarea,button{font-family:inherit}
+  input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+  ::-webkit-scrollbar{width:4px;background:#111}
+  ::-webkit-scrollbar-thumb{background:#333;border-radius:4px}
+  .light-mode{color:#1a1a1a!important}
+  .light-mode input,.light-mode textarea{background:#f0f0f0!important;border-color:#ccc!important;color:#1a1a1a!important}
+  .light-mode input::placeholder,.light-mode textarea::placeholder{color:#999!important}
+  .light-mode .mp-modal,.light-mode .modal-inner{background:#ffffff!important;border-color:#ddd!important;color:#1a1a1a!important}
+  .light-mode .note-card{border-color:#ddd!important}
+  body.light{background:#f5f5f0!important;color:#1a1a1a!important}
+  body.light #root{background:#f5f5f0!important}
+  body.light{--card-bg:#ffffff;--border:#ddd;--men-bg:#e8f5e8}
+  body{--card-bg:#1e1e1e;--border:#333;--men-bg:#0a140a}
+  body.light .note-card{background:#ffffff!important;border-color:#ddd!important;color:#1a1a1a!important}
+  body.light .note-card *{color:#1a1a1a!important}
+  body.light .note-card .men-count{color:#2a6a2a!important}
+  body.light input,body.light textarea{background:#f0f0f0!important;border-color:#ccc!important;color:#1a1a1a!important}
+  body.light input::placeholder,body.light textarea::placeholder{color:#aaa!important}
+  body.light .mp-modal,body.light .modal-inner{background:#ffffff!important;border-color:#ddd!important;color:#1a1a1a!important}
+  @keyframes fadeout{0%{opacity:1}60%{opacity:1}100%{opacity:0}}
+  .note-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.5);transform:translateY(-2px)}
+  @media(max-width:500px){.modal-inner{padding:16px 14px!important}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBmfS95NF4cUIm-Bn6gUXf-qW7E5FyOTXc",
+  authDomain: "manpower-1b2d1.firebaseapp.com",
+  databaseURL: "https://manpower-1b2d1-default-rtdb.firebaseio.com",
+  projectId: "manpower-1b2d1",
+  storageBucket: "manpower-1b2d1.firebasestorage.app",
+  messagingSenderId: "907399482998",
+  appId: "1:907399482998:web:0f479e221d963b28459957"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+</script>
+<script type="text/babel">
+const {useState,useEffect,useRef,useCallback}=React;
+const A="#f5c842";
+const GR="#7ecf7e";
+
+// ── Persistence ───────────────────────────────────────────────────────────────
+const load=(k,fb)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):fb}catch{return fb}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
+
+// Firebase sync
+let FB_USER_ID=localStorage.getItem("mp-user-id")||null;
+const FB_PATH=()=>FB_USER_ID?"users/"+FB_USER_ID:null;
+function fbSave(key,value){
+  const p=FB_PATH();
+  if(!p)return;
+  try{db.ref(p+"/"+key).set(value);}catch(e){console.warn("Firebase save failed",e);}
+}
+function fbListen(key,cb){
+  const p=FB_PATH();
+  if(!p)return;
+  try{db.ref(p+"/"+key).once("value").then(snap=>{const v=snap.val();if(v!==null)cb(v);});}catch(e){console.warn("Firebase listen failed",e);}
+}
+
+// ── Defaults ──────────────────────────────────────────────────────────────────
+const DEFAULT_FLOORS=[];
+const DEFAULT_SECTION_TRADES=[];
+const THEMES=[
+  {name:"default", dark:"#1a1a1a", light:"#ffffff", label:"Default"},
+  {name:"slate",   dark:"#1e2a4a", light:"#e8eaf6", label:"Slate"},
+  {name:"ocean",   dark:"#0a2a4a", light:"#e3f2fd", label:"Ocean"},
+  {name:"forest",  dark:"#0e2e14", light:"#e8f5e9", label:"Forest"},
+  {name:"rose",    dark:"#3a1020", light:"#fce4ec", label:"Rose"},
+  {name:"amber",   dark:"#3a2800", light:"#fff8e1", label:"Amber"},
+  {name:"plum",    dark:"#2e0e40", light:"#f3e5f5", label:"Plum"},
+  {name:"teal",    dark:"#0a2e30", light:"#e0f7fa", label:"Teal"},
+  {name:"sand",    dark:"#2e2010", light:"#fdf6e3", label:"Sand"},
+];
+function getThemeBg(name,lightMode){
+  const t=THEMES.find(x=>x.name===name)||THEMES[0];
+  return lightMode?t.light:t.dark;
+}
+const BASE_TRADES=["Allcraft","Ascape","Atlantic","Bamco","Cooper","Danaos","Donaldson","Dynamic","F&G","FMB","Gotham","Jasper","Josloff","KF","LVC","Meadowlands","Persistent","Power","Pyramid","Riggs","Schindler","Sesso","Tagwall","Zuccarro","LIFD"];
+function getKnownTrades(){
+  const custom=load("mp-custom-trades",[]);
+  return [...new Set([...BASE_TRADES,...custom])].sort();
+}
+let KNOWN_TRADES=getKnownTrades();
+
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2);
+const newRow=()=>({id:uid(),trade:"",men:"",activity:""});
+const newTRow=()=>({id:uid(),floor:"",activity:"",men:""});
+const todayStr=()=>new Date().toLocaleDateString("en-US",{month:"2-digit",day:"2-digit",year:"2-digit"}).replace(/\//g,".");
+
+function emptyNote(floors,sectionTrades){
+  const f={};floors.forEach(fl=>{f[fl]=[newRow()]});
+  const t={};sectionTrades.forEach(tr=>{t[tr]=[newTRow()]});
+  return{id:uid(),type:"manpower",date:todayStr(),floors:f,floorOrder:[...floors],trades:t,customTrades:[],todo:[""],color:"default",pinned:false,createdAt:Date.now(),updatedAt:Date.now()};
+}
+function focusNext(current){
+  const modal=current.closest(".mp-modal");
+  const inputs=modal?Array.from(modal.querySelectorAll("input:not([disabled]),textarea:not([disabled])")):[];
+  const i=inputs.indexOf(current);
+  if(i>-1&&inputs[i+1]){
+    setTimeout(()=>inputs[i+1].focus(),50);
+  }
+}
+function saveTemplate(floorOrder, floors){
+  const rowCounts={};
+  floorOrder.forEach(f=>{rowCounts[f]=(floors[f]||[]).length||1;});
+  const tpl={floorOrder,rowCounts};
+  save("mp-template",tpl);
+  fbSave("template",tpl);
+}
+function loadTemplate(){
+  return load("mp-template",null);
+}
+
+// ── Shared styles ─────────────────────────────────────────────────────────────
+const fi=(ex={})=>({background:"#252525",border:"1px solid #2e2e2e",borderRadius:5,padding:"6px 9px",color:"#ddd",fontSize:13,outline:"none",boxSizing:"border-box",...ex});
+const xB={background:"none",border:"none",color:"#ff3333",cursor:"pointer",fontSize:15,padding:"0 3px",lineHeight:1,flexShrink:0};
+const addB={background:"#0e1e0e",border:"1px solid #2a4a2a",borderRadius:5,color:GR,cursor:"pointer",fontSize:13,padding:"5px 12px",fontWeight:700};
+
+// ── Trade autocomplete ────────────────────────────────────────────────────────
+
+function UserSetup({onComplete}){
+  const[email,setEmail]=useState("");
+  const[error,setError]=useState("");
+  function submit(){
+    const e=email.trim().toLowerCase();
+    if(!e||e.length<2){setError("Please enter your email username.");return;}
+    const id=e.replace(/[^a-z0-9]/g,"_");
+    FB_USER_ID=id;
+    localStorage.setItem("mp-user-id",id);
+    localStorage.setItem("mp-user-email",e);
+    onComplete(id);
+  }
+  return(
+    <div style={{position:"fixed",inset:0,background:"#111",zIndex:999,display:"flex",alignItems:"center",justifyContent:"center",padding:24}}>
+      <div style={{background:"#1a1a1a",border:"1px solid #2e2e2e",borderRadius:16,padding:"32px 24px",width:"100%",maxWidth:340,textAlign:"center"}}>
+        <div style={{fontSize:36,marginBottom:12}}>📋</div>
+        <div style={{fontWeight:800,fontSize:20,color:"#f5c842",marginBottom:8}}>Welcome to Manpower</div>
+        <div style={{fontSize:13,color:"#666",marginBottom:6,lineHeight:1.6}}>Enter the part of your work email before the @</div>
+        <div style={{fontSize:12,color:"#444",marginBottom:20}}>e.g. if your email is john.smith@company.com, enter <span style={{color:"#888"}}>john.smith</span></div>
+        <div style={{display:"flex",alignItems:"center",gap:0,marginBottom:error?8:16}}>
+          <input autoFocus value={email} onChange={e=>{setEmail(e.target.value);setError("");}} onKeyDown={e=>e.key==="Enter"&&submit()}
+            placeholder="john.smith"
+            style={{flex:1,background:"#252525",border:"1px solid "+(error?"#ff3333":"#3a3a3a"),borderTopLeftRadius:8,borderBottomLeftRadius:8,borderTopRightRadius:0,borderBottomRightRadius:0,padding:"12px 14px",color:"#f0f0f0",fontSize:15,outline:"none",boxSizing:"border-box"}}/>
+          <div style={{background:"#1e1e1e",border:"1px solid "+(error?"#ff3333":"#3a3a3a"),borderLeft:"none",borderTopRightRadius:8,borderBottomRightRadius:8,padding:"12px 10px",color:"#555",fontSize:14,whiteSpace:"nowrap"}}>@work.com</div>
+        </div>
+        {error&&<div style={{fontSize:12,color:"#ff3333",marginBottom:12,textAlign:"left"}}>{error}</div>}
+        <button onClick={submit} style={{width:"100%",background:"#f5c842",color:"#111",border:"none",borderRadius:8,padding:"12px",fontWeight:800,fontSize:15,cursor:"pointer"}}>Get Started</button>
+        <div style={{fontSize:11,color:"#444",marginTop:12}}>Only used to keep your notes private.</div>
+      </div>
+    </div>
+  );
+}
+function ConfirmModal({message,onConfirm,onCancel}){
+  return(
+    <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.85)",zIndex:999,display:"flex",alignItems:"center",justifyContent:"center",padding:24}} onClick={onCancel}>
+      <div style={{background:"#1a1a1a",border:"1px solid #333",borderRadius:16,padding:"28px 24px",width:"100%",maxWidth:320,textAlign:"center"}} onClick={e=>e.stopPropagation()}>
+        <div style={{fontSize:32,marginBottom:12}}>🗑</div>
+        <div style={{fontSize:16,fontWeight:700,color:"#f0f0f0",marginBottom:8}}>Delete Note?</div>
+        <div style={{fontSize:13,color:"#666",marginBottom:24}}>{message}</div>
+        <div style={{display:"flex",gap:10}}>
+          <button onClick={onCancel} style={{flex:1,background:"#252525",border:"1px solid #333",borderRadius:8,color:"#aaa",fontSize:14,padding:"12px 0",cursor:"pointer",fontWeight:700}}>Cancel</button>
+          <button onClick={onConfirm} style={{flex:1,background:"#8a1a1a",border:"none",borderRadius:8,color:"#fff",fontSize:14,padding:"12px 0",cursor:"pointer",fontWeight:800}}>Delete</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+function ColorPopup({current,onChange,onClose,lightMode}){
+  return(
+    <div style={{position:"absolute",top:"110%",right:0,zIndex:500,background:lightMode?"#fff":"#222",border:"1px solid "+(lightMode?"#ddd":"#444"),borderRadius:12,padding:"12px 14px",boxShadow:"0 8px 32px rgba(0,0,0,.4)",minWidth:220}} onClick={e=>e.stopPropagation()}>
+      <div style={{fontSize:10,letterSpacing:2,color:"#888",textTransform:"uppercase",marginBottom:10}}>Theme</div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(9,1fr)",gap:6,marginBottom:8}}>
+        {THEMES.map(t=>(
+          <button key={t.name} title={t.label} onClick={()=>{onChange(t.name);onClose();}}
+            style={{width:26,height:26,borderRadius:"50%",background:lightMode?t.light:t.dark,border:current===t.name?"2.5px solid #f5c842":"1.5px solid "+(lightMode?"#ccc":"#555"),cursor:"pointer",transition:"transform 0.15s",transform:current===t.name?"scale(1.25)":"scale(1)"}}/>
+        ))}
+      </div>
+    </div>
+  );
+}
+function TradeInput({value,onChange,style}){
+  const[show,setShow]=useState(false);
+  const ref=useRef();
+  const filtered=value.length>0?KNOWN_TRADES.filter(t=>t.toLowerCase().startsWith(value.toLowerCase())&&t.toLowerCase()!==value.toLowerCase()):[];
+  useEffect(()=>{
+    const h=e=>{if(ref.current&&!ref.current.contains(e.target))setShow(false)};
+    document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h);
+  },[]);
+  return(
+    <div ref={ref} style={{position:"relative",flex:1,minWidth:0}}>
+      <input value={value} onChange={e=>{onChange(e.target.value);setShow(true)}} onFocus={()=>setShow(true)} placeholder="Trade" style={{...style,width:"100%"}}/>
+      {show&&filtered.length>0&&(
+        <div style={{position:"absolute",top:"100%",left:0,right:0,zIndex:500,background:"#1a1a1a",border:"1px solid #333",borderRadius:6,boxShadow:"0 6px 20px rgba(0,0,0,.7)",marginTop:2,maxHeight:180,overflowY:"auto"}}>
+          {filtered.map(t=>(
+            <div key={t}
+              onMouseDown={e=>{e.preventDefault();onChange(t);setShow(false);}}
+              onTouchEnd={e=>{e.preventDefault();onChange(t);setShow(false);}}
+              style={{padding:"10px 12px",fontSize:13,color:"#ccc",cursor:"pointer",borderBottom:"1px solid #222"}}
+              onMouseEnter={e=>e.currentTarget.style.background="#2a2a2a"}
+              onMouseLeave={e=>e.currentTarget.style.background="transparent"}
+            >{t}</div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Settings Modal ────────────────────────────────────────────────────────────
+function SettingsModal({settings,onSave,onClose,onTradesUpdated,lightMode}){
+  const[ready,setReady]=useState(false);
+  useEffect(()=>{const t=setTimeout(()=>setReady(true),350);return()=>clearTimeout(t);},[]);
+  
+  const[customTrades,setCustomTrades]=useState(()=>load("mp-custom-trades",[]));
+  const[newKnownTrade,setNewKnownTrade]=useState("");
+  function addKnownTrade(){
+    const v=newKnownTrade.trim();
+    if(!v||customTrades.includes(v)||BASE_TRADES.includes(v))return;
+    const updated=[...customTrades,v];
+    setCustomTrades(updated);
+    save("mp-custom-trades",updated);
+    KNOWN_TRADES=getKnownTrades();
+    setNewKnownTrade("");
+    if(onTradesUpdated)onTradesUpdated();
+  }
+  function removeKnownTrade(t){
+    const updated=customTrades.filter(x=>x!==t);
+    setCustomTrades(updated);
+    save("mp-custom-trades",updated);
+    KNOWN_TRADES=getKnownTrades();
+    if(onTradesUpdated)onTradesUpdated();
+  }
+
+  function addFloor(){
+    const v=newFloor.trim();
+    if(!v)return;
+    setFloors(f=>[v,...f]);
+    setNewFloor("");
+  }
+
+
+  return(
+    <div className={lightMode?"light-mode":""} style={{position:"fixed",inset:0,background:lightMode?"rgba(0,0,0,.3)":"rgba(0,0,0,.85)",zIndex:400,display:"flex",alignItems:"center",justifyContent:"center",padding:16}} onClick={onClose}>
+      <div className={`modal-inner${lightMode?" light-mode":""}`} style={{background:lightMode?"#ffffff":"#1a1a1a",border:"1px solid "+(lightMode?"#ddd":"#2e2e2e"),borderRadius:16,width:"100%",maxWidth:420,padding:"22px 22px 18px",maxHeight:"85vh",overflowY:"auto",color:lightMode?"#1a1a1a":"#f0f0f0"}} onClick={e=>e.stopPropagation()}>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:20}}>
+          <span style={{fontWeight:800,fontSize:16,color:A}}>Settings</span>
+          <div style={{position:"relative"}}>
+              <button onClick={()=>setShowColorPicker(p=>!p)} style={{background:"none",border:"1px solid #333",borderRadius:6,fontSize:13,padding:"4px 8px",cursor:"pointer",color:"#888"}}>🎨</button>
+              {showColorPicker&&<ColorPopup current={draft.color||"default"} onChange={c=>setDraft(d=>({...d,color:c}))} onClose={()=>setShowColorPicker(false)} lightMode={lightMode}/>}
+            </div>
+            <button onClick={onClose} style={{...xB,fontSize:20,color:"#555"}}>✕</button>
+        </div>
+
+
+
+        <div style={{borderTop:"1px solid #222",marginBottom:16,paddingTop:16}}>
+          <Label>Autocomplete Trades</Label>
+          <div style={{fontSize:11,color:"#445",marginBottom:8}}>These show as suggestions when typing a trade name.</div>
+          <div style={{maxHeight:140,overflowY:"auto",marginBottom:8}}>
+            {customTrades.map(t=>(
+              <div key={t} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"5px 8px",background:"#252525",borderRadius:5,marginBottom:4}}>
+                <span style={{fontSize:13,color:"#ccc"}}>{t}</span>
+                <button onClick={()=>removeKnownTrade(t)} style={{background:"none",border:"none",color:"#ff3333",cursor:"pointer",fontSize:14,padding:0}}>✕</button>
+              </div>
+            ))}
+            {customTrades.length===0&&<div style={{fontSize:11,color:"#444",fontStyle:"italic"}}>No custom trades yet.</div>}
+          </div>
+          <div style={{display:"flex",gap:6}}>
+            <input value={newKnownTrade} onChange={e=>setNewKnownTrade(e.target.value)} onKeyDown={e=>e.key==="Enter"&&addKnownTrade()} placeholder="Add trade to autocomplete…" style={{...fi(),flex:1}}/>
+            <button onClick={addKnownTrade} style={{background:A,color:"#111",border:"none",borderRadius:5,padding:"6px 14px",fontWeight:800,cursor:"pointer",fontSize:13}}>+</button>
+          </div>
+        </div>
+        <button onClick={()=>onSave({floors:settings.floors||[],sectionTrades:settings.sectionTrades||[]})} style={{width:"100%",background:A,color:"#111",border:"none",borderRadius:8,padding:"11px",fontWeight:800,fontSize:14,cursor:"pointer"}}>Save Settings</button>
+      </div>
+    </div>
+  );
+}
+
+function Label({children}){return <div style={{fontSize:10,letterSpacing:2,color:"#555",textTransform:"uppercase",marginBottom:8}}>{children}</div>}
+
+// ── Manpower Modal ────────────────────────────────────────────────────────────
+function buildReport(note,settings){
+  const lines=[];
+  lines.push("Date: "+note.date);
+  lines.push("");
+  const floorList=note.floorOrder||(settings.floors||[]);
+  floorList.forEach(f=>{
+    const rows=(note.floors[f]||[]).filter(r=>r.trade||r.activity||r.men);
+    if(rows.length){
+      lines.push("Floor "+f);
+      rows.forEach(r=>{
+        let line=" -";
+        if(r.trade)line+=r.trade;
+        if(r.men)line+=" "+r.men;
+        if(r.activity)line+="-"+r.activity;
+        lines.push(line);
+      });
+    }
+  });
+  const allTrades=[...settings.sectionTrades,...(note.customTrades||[])];
+  const tradeLines=[];
+  allTrades.forEach(t=>{
+    const rows=(note.trades[t]||[]).filter(r=>r.floor||r.activity||r.men);
+    if(rows.length){
+      tradeLines.push(t+":");
+      rows.forEach(r=>{
+        let line=" -";
+        if(r.floor)line+="Floor "+r.floor;
+        if(r.men)line+=" "+r.men;
+        if(r.activity)line+="-"+r.activity;
+        tradeLines.push(line);
+      });
+    }
+  });
+  if(tradeLines.length){lines.push("");lines.push("TRADES");tradeLines.forEach(l=>lines.push(l));}
+  const todos=(Array.isArray(note.todo)?note.todo.join("\n"):note.todo||"").trim().split("\n").filter(t=>t.trim());
+  if(todos.length){lines.push("");lines.push("TO DO");todos.forEach(t=>lines.push(t));}
+  return lines;
+}
+function makeReport(note,settings){
+  const text=buildReport(note,settings).join("\n");
+  if(navigator.share){
+    navigator.share({title:"Manpower Report "+note.date,text}).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText(text).catch(()=>{});
+  }
+}
+function copyReport(note,settings,cb){
+  const text=buildReport(note,settings).join("\n");
+  navigator.clipboard.writeText(text).then(()=>{if(cb)cb();}).catch(()=>{
+    const w=window.open("","_blank");
+    w.document.write("<pre style='font-family:monospace;padding:20px;white-space:pre-wrap'>"+text+"</pre>");
+    if(cb)cb();
+  });
+}
+function ManpowerModal({note,onSave,onAutoSave,onClose,onDelete,onCopy,settings,lightMode}){
+  const[draft,setDraft]=useState(()=>JSON.parse(JSON.stringify(note)));
+  const[newFloorVal,setNewFloorVal]=useState("");
+  const[newTradeVal,setNewTradeVal]=useState("");
+  const[templateSaved,setTemplateSaved]=useState(false);
+  const[confirmDel,setConfirmDel]=useState(false);
+  const[showColorPicker,setShowColorPicker]=useState(false);
+  const[tpl,setTpl]=useState(()=>loadTemplate());
+  const[toast,setToast]=useState(false);
+  const[autoSaved,setAutoSaved]=useState(false);
+  const showToast=()=>{setToast(true);setTimeout(()=>setToast(false),2000);};
+  const isFirstRender=React.useRef(true);
+  useEffect(()=>{
+    if(isFirstRender.current){isFirstRender.current=false;return;}
+    const timer=setTimeout(()=>{
+      if(onAutoSave)onAutoSave(draft);
+      setAutoSaved(true);
+      setTimeout(()=>setAutoSaved(false),1500);
+    },500);
+    return()=>clearTimeout(timer);
+  },[draft]);
+
+  // Sync any new floors/trades from settings that aren't in this note yet
+  useEffect(()=>{
+    setDraft(d=>{
+      const floorOrder=d.floorOrder||(settings.floors||[]);
+      const floors={...d.floors};
+      floorOrder.forEach(f=>{if(!floors[f])floors[f]=[newRow()]});
+      const trades={...d.trades};
+      settings.sectionTrades.forEach(t=>{if(!trades[t])trades[t]=[newTRow()]});
+      return{...d,floors,floorOrder,trades};
+    });
+  },[]);
+
+  const setFR=(f,id,field,val)=>setDraft(d=>({...d,floors:{...d.floors,[f]:d.floors[f].map(r=>r.id===id?{...r,[field]:val}:r)}}));
+  const addFR=f=>{setDraft(d=>({...d,floors:{...d.floors,[f]:[...d.floors[f],newRow()]}}));setTimeout(()=>{const modal=document.querySelector('.mp-modal');if(modal){const inputs=Array.from(modal.querySelectorAll('input'));const last=inputs[inputs.length-1];if(last)last.focus();}},80);};
+  const delFR=(f,id)=>setDraft(d=>({...d,floors:{...d.floors,[f]:d.floors[f].filter(r=>r.id!==id)}}));
+
+  const setTR=(t,id,field,val)=>setDraft(d=>({...d,trades:{...d.trades,[t]:d.trades[t].map(r=>r.id===id?{...r,[field]:val}:r)}}));
+  const addTR=t=>setDraft(d=>({...d,trades:{...d.trades,[t]:[...d.trades[t],newTRow()]}}));
+  const delTR=(t,id)=>setDraft(d=>({...d,trades:{...d.trades,[t]:d.trades[t].filter(r=>r.id!==id)}}));
+
+  const addFloor=()=>{
+    const n="new_"+uid();
+    setDraft(d=>({...d,floorOrder:[n,...(d.floorOrder||[])],floors:{...d.floors,[n]:[newRow()]}}));
+  };
+  const renameFloor=(oldKey,newKey)=>{
+    if(!newKey.trim()||newKey===oldKey)return;
+    setDraft(d=>{
+      const floorOrder=(d.floorOrder||[]).map(f=>f===oldKey?newKey:f);
+      const floors={};
+      Object.keys(d.floors).forEach(f=>{floors[f===oldKey?newKey:f]=d.floors[f];});
+      return{...d,floorOrder,floors};
+    });
+  };
+  const sortFloors=()=>{
+    setDraft(d=>{
+      // Sort floor order high to low
+      const floorOrder=[...(d.floorOrder||[])].sort((a,b)=>{
+        const na=parseFloat(a)||0, nb=parseFloat(b)||0;
+        return nb-na;
+      });
+      // Sort trades A-Z within each floor
+      const floors={};
+      Object.keys(d.floors).forEach(f=>{
+        floors[f]=[...d.floors[f]].sort((a,b)=>a.trade.toLowerCase().localeCompare(b.trade.toLowerCase()));
+      });
+      return{...d,floorOrder,floors};
+    });
+  };
+  const applyTemplate=()=>{
+    const tpl=loadTemplate();
+    if(!tpl)return;
+    setDraft(d=>{
+      const floorOrder=[...tpl.floorOrder];
+      const floors={};
+      floorOrder.forEach(f=>{
+        const count=(tpl.rowCounts&&tpl.rowCounts[f])||1;
+        floors[f]=Array.from({length:count},()=>newRow());
+      });
+      return{...d,floorOrder,floors};
+    });
+  };
+  const saveAsTemplate=()=>{
+    saveTemplate(draft.floorOrder||[],draft.floors||{});
+    setTpl(loadTemplate());
+    setTemplateSaved(true);
+    setTimeout(()=>setTemplateSaved(false),2000);
+  };
+  const removeFloor=f=>{
+    setDraft(d=>{
+      const floorOrder=(d.floorOrder||[]).filter(x=>x!==f);
+      const floors={...d.floors};
+      delete floors[f];
+      return{...d,floorOrder,floors};
+    });
+  };
+
+  const addCustomTrade=()=>{
+    const n="new_trade_"+uid();
+    setDraft(d=>({...d,trades:{...d.trades,[n]:[newTRow()]},customTrades:[...(d.customTrades||[]),n]}));
+  };
+  const renameTrade=(oldKey,newKey)=>{
+    if(!newKey.trim()||newKey===oldKey)return;
+    setDraft(d=>{
+      const trades={};
+      Object.keys(d.trades).forEach(t=>{trades[t===oldKey?newKey:t]=d.trades[t];});
+      const customTrades=(d.customTrades||[]).map(t=>t===oldKey?newKey:t);
+      return{...d,trades,customTrades};
+    });
+  };
+  const removeCustomTrade2=name=>{
+    setDraft(d=>{
+      const trades={...d.trades};delete trades[name];
+      return{...d,trades,customTrades:(d.customTrades||[]).filter(t=>t!==name)};
+    });
+  };
+  const delCustomTrade=name=>setDraft(d=>{const trades={...d.trades};delete trades[name];return{...d,trades,customTrades:(d.customTrades||[]).filter(t=>t!==name)};});
+
+  const setTodo=(i,v)=>setDraft(d=>{const todo=[...d.todo];todo[i]=v;return{...d,todo}});
+  const addTodo=()=>setDraft(d=>({...d,todo:[...d.todo,""]}));
+  const delTodo=i=>setDraft(d=>({...d,todo:d.todo.filter((_,j)=>j!==i)}));
+  const todoKey=(e,i)=>{
+    if(e.key==="Enter"){e.preventDefault();addTodo();}
+    if(e.key==="Backspace"&&draft.todo[i]===""&&draft.todo.length>1){e.preventDefault();delTodo(i);}
+  };
+
+  const totalMen=(settings.floors||[]).reduce((s,f)=>s+(draft.floors[f]||[]).reduce((ss,r)=>ss+(parseInt(r.men)||0),0),0);
+  const allTrades=[...settings.sectionTrades,...(draft.customTrades||[])];
+
+  return(
+    <div className={lightMode?"light-mode":""} style={{position:"fixed",inset:0,background:"rgba(0,0,0,.95)",zIndex:300,overflowY:"auto",paddingTop:"env(safe-area-inset-top, 16px)",paddingBottom:16,paddingLeft:12,paddingRight:12}} onClick={onClose}>
+      <div className="modal-inner" style={{background:"#1a1a1a",border:"1px solid #2e2e2e",borderRadius:16,width:"100%",maxWidth:640,margin:"0 auto",padding:"20px 22px 18px"}} onClick={e=>e.stopPropagation()}>
+
+        {/* Header */}
+        <div style={{display:"flex",alignItems:"flex-start",justifyContent:"space-between",marginBottom:18}}>
+          <div>
+            <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}>
+              <div style={{fontSize:9,color:"#556",letterSpacing:2,textTransform:"uppercase"}}>Daily Manpower</div>
+              {autoSaved&&<div style={{fontSize:9,color:"#4a7a4a",letterSpacing:1}}>✓ Saved</div>}
+            </div>
+            <input value={draft.date} onChange={e=>setDraft(d=>({...d,date:e.target.value}))}
+              style={{background:"#252525",border:"1px solid #3a3a3a",borderRadius:7,color:A,fontWeight:800,fontSize:16,outline:"none",width:"100%",padding:"8px 12px",boxSizing:"border-box"}}/>
+          </div>
+          <div style={{display:"flex",alignItems:"center",gap:10}}>
+
+            <div style={{position:"relative"}}>
+              <button onClick={()=>setShowColorPicker(p=>!p)} style={{background:"none",border:"1px solid #333",borderRadius:6,fontSize:13,padding:"4px 8px",cursor:"pointer",color:"#888"}}>🎨</button>
+              {showColorPicker&&<ColorPopup current={draft.color||"default"} onChange={c=>setDraft(d=>({...d,color:c}))} onClose={()=>setShowColorPicker(false)} lightMode={lightMode}/>}
+            </div>
+            <button onClick={onClose} style={{...xB,fontSize:20,color:"#555"}}>✕</button>
+          </div>
+        </div>
+        {/* Floors */}
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}>
+          <Label>Floors</Label>
+          <div style={{display:"flex",gap:6,alignItems:"center"}}>
+            {tpl&&<button onClick={applyTemplate} style={{background:"#0e1e2e",border:"1px solid #2a5a9a",borderRadius:5,color:"#7ab0d8",fontSize:12,padding:"4px 10px",cursor:"pointer",fontWeight:700}}>{(draft.floorOrder||[]).length===0?"📋 Use Template":"📋 Reset"}</button>}
+            {tpl&&(draft.floorOrder||[]).length>0&&<div style={{width:1,height:20,background:"#2a2a2a",margin:"0 6px"}}/>}
+            <button onClick={sortFloors} style={{background:"#1a1a2e",border:"1px solid #2a2a5a",borderRadius:5,color:"#7a9ad8",fontSize:12,padding:"4px 10px",cursor:"pointer",fontWeight:700}}>A→Z</button>
+            <button onClick={addFloor} style={{background:"#1a2e1a",border:"1px solid #2a4a2a",borderRadius:5,color:GR,fontSize:12,padding:"4px 10px",cursor:"pointer",fontWeight:700}}>+ Add floor</button>
+          </div>
+        </div>
+
+        {(draft.floorOrder||[]).map(f=>(
+          <div key={f} style={{marginBottom:12}}>
+            <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:4}}>
+              <input defaultValue={f.startsWith("new_")?"":f} onBlur={e=>renameFloor(f,e.target.value||f)} onKeyDown={e=>e.key==="Enter"&&e.target.blur()} placeholder="#" style={{width:32,height:32,borderRadius:5,background:"#252525",border:"1px solid #444",color:A,fontWeight:800,fontSize:13,textAlign:"center",outline:"none",flexShrink:0,padding:0}}/>
+              <div style={{display:"grid",gridTemplateColumns:"1fr 40px 1fr 18px",gap:5,flex:1}}>
+                <div style={{fontSize:9,color:"#444",textTransform:"uppercase",letterSpacing:1}}>Trade</div>
+                <div style={{fontSize:9,color:"#444",textTransform:"uppercase",letterSpacing:1,textAlign:"center"}}>Men</div>
+                <div style={{fontSize:9,color:"#444",textTransform:"uppercase",letterSpacing:1}}>Activity</div>
+                <div/>
+              </div>
+              <button onClick={()=>removeFloor(f)} title="Remove floor" style={{...xB,fontSize:12,marginLeft:2}}>✕</button>
+            </div>
+            {(draft.floors[f]||[]).map(row=>(
+              <div key={row.id} style={{display:"grid",gridTemplateColumns:"28px 1fr 40px 1fr 18px",gap:5,marginBottom:5,alignItems:"center"}}>
+                <div/>
+                <TradeInput value={row.trade} onChange={v=>setFR(f,row.id,"trade",v)} style={fi()}/>
+                <input value={row.men} onChange={e=>setFR(f,row.id,"men",e.target.value)} placeholder="0" type="number" min="0" inputMode="numeric" style={fi({textAlign:"center",width:"100%"})}/>
+                <input value={row.activity} onChange={e=>setFR(f,row.id,"activity",e.target.value)} placeholder="Activity…" style={fi({width:"100%"})}/>
+                <button onClick={()=>delFR(f,row.id)} style={xB}>✕</button>
+              </div>
+            ))}
+            <div style={{paddingLeft:33}}><button onClick={()=>addFR(f)} style={addB}>+ add row</button></div>
+          </div>
+        ))}
+
+        <div style={{borderTop:"1px solid #222",margin:"16px 0"}}/>
+
+        {/* Trades Section */}
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:6}}>
+          <Label>Trades (foreman available)</Label>
+<button onClick={addCustomTrade} style={{background:"#1a2e1a",border:"1px solid #2a4a2a",borderRadius:5,color:GR,fontSize:12,padding:"4px 10px",cursor:"pointer",fontWeight:700}}>+ Add trade</button>
+        </div>
+        {allTrades.length===0&&<div style={{fontSize:12,color:"#444",fontStyle:"italic",marginBottom:12}}>Tap + Add trade if you spoke directly with a foreman.</div>}
+        {allTrades.map(trade=>(
+          <div key={trade} style={{marginBottom:14}}>
+            <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:5}}>
+              <input defaultValue={trade.startsWith("new_trade_")?"":trade} onBlur={e=>renameTrade(trade,e.target.value||trade)} onKeyDown={e=>e.key==="Enter"&&e.target.blur()} placeholder="Trade name…" style={{background:"transparent",border:"none",borderBottom:"1px solid #333",color:"#aaa",fontWeight:700,fontSize:12,outline:"none",flex:1,padding:"2px 4px"}}/>
+              <button onClick={()=>removeCustomTrade2(trade)} style={{...xB,fontSize:13,color:"#5a2a2a"}}>✕</button>
+            </div>
+            <div style={{display:"grid",gridTemplateColumns:"55px 1fr 45px 18px",gap:5,marginBottom:4}}>
+              <div style={{fontSize:9,color:"#444",textTransform:"uppercase",letterSpacing:1}}>Floor</div>
+              <div style={{fontSize:9,color:"#444",textTransform:"uppercase",letterSpacing:1}}>Activity</div>
+              <div style={{fontSize:9,color:"#444",textTransform:"uppercase",letterSpacing:1,textAlign:"center"}}>Men</div>
+              <div/>
+            </div>
+            {(draft.trades[trade]||[]).map(row=>(
+              <div key={row.id} style={{display:"grid",gridTemplateColumns:"55px 1fr 45px 18px",gap:5,marginBottom:5,alignItems:"center"}}>
+                <input value={row.floor} onChange={e=>setTR(trade,row.id,"floor",e.target.value)} placeholder="Flr" style={fi({width:"100%"})}/>
+                <input value={row.activity} onChange={e=>setTR(trade,row.id,"activity",e.target.value)} placeholder="Activity…" style={fi({width:"100%"})}/>
+                <input value={row.men} onChange={e=>setTR(trade,row.id,"men",e.target.value)} placeholder="0" type="number" min="0" inputMode="numeric" style={fi({width:"100%",textAlign:"center"})}/>
+                <button onClick={()=>delTR(trade,row.id)} style={xB}>✕</button>
+              </div>
+            ))}
+            <button onClick={()=>addTR(trade)} style={addB}>+ add row</button>
+          </div>
+        ))}
+
+        <div style={{borderTop:"1px solid #222",margin:"16px 0"}}/>
+
+        {/* To Do */}
+        <Label>To Do</Label>
+        <textarea
+          value={draft.todo.join("\n")}
+          onChange={e=>setDraft(d=>({...d,todo:e.target.value.split("\n")}))}
+          placeholder="Notes, tasks, reminders…"
+          rows={5}
+          style={{...fi(),width:"100%",resize:"vertical",lineHeight:1.7,fontSize:13}}
+        />
+
+        {/* Toast */}
+        {toast&&(
+          <div style={{position:"fixed",bottom:80,left:"50%",transform:"translateX(-50%)",background:"#1a3a1a",border:"1px solid #2a5a2a",borderRadius:10,padding:"10px 24px",color:GR,fontWeight:700,fontSize:14,zIndex:999,boxShadow:"0 4px 20px rgba(0,0,0,0.5)",animation:"fadeout 2s forwards",pointerEvents:"none"}}>
+            ✓ Copied!
+          </div>
+        )}
+        {/* Footer */}
+        <div style={{marginTop:20,paddingTop:14,borderTop:"1px solid #222"}}>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8,marginBottom:10}}>
+            <button onClick={()=>makeReport(draft,settings)} style={{background:"#1a2a1a",border:"1px solid #2a4a2a",borderRadius:8,color:GR,padding:"11px 0",fontWeight:800,fontSize:13,cursor:"pointer",textAlign:"center"}}>📤 Share</button>
+            <button onClick={()=>copyReport(draft,settings,showToast)} style={{background:"#1a2a1a",border:"1px solid #2a4a2a",borderRadius:8,color:GR,padding:"11px 0",fontWeight:800,fontSize:13,cursor:"pointer",textAlign:"center"}}>📋 Copy</button>
+            <button onClick={()=>onSave(draft)} style={{background:A,color:"#111",border:"none",borderRadius:8,padding:"11px 0",fontWeight:800,fontSize:13,cursor:"pointer",textAlign:"center"}}>Save & Close</button>
+          </div>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}}>
+            <button onClick={()=>setConfirmDel(true)} style={{background:"none",border:"1px solid #ff3333",borderRadius:6,color:"#ff3333",cursor:"pointer",fontSize:12,padding:"7px 0",textAlign:"center"}}>🗑 Delete</button>
+            {confirmDel&&<ConfirmModal message="This cannot be undone." onConfirm={()=>onDelete(note.id)} onCancel={()=>setConfirmDel(false)}/>}
+            <button onClick={()=>onCopy(note)} style={{background:"none",border:"1px solid #2a2a2a",borderRadius:6,color:"#666",fontSize:12,padding:"7px 0",cursor:"pointer",textAlign:"center"}}>📄 Duplicate</button>
+            <button onClick={saveAsTemplate} style={{background:templateSaved?"#1a3a1a":"none",border:"1px solid #2a3a2a",borderRadius:6,color:templateSaved?GR:"#556",fontSize:12,padding:"7px 0",cursor:"pointer",textAlign:"center"}}>
+              {templateSaved?"✓ Saved!":"⭐ Template"}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Manpower Card ─────────────────────────────────────────────────────────────
+function MpCard({note,onClick,onPin,floors,lightMode,onCopy,onDelete}){
+  const fl=note.floorOrder||floors;
+  const total=fl.reduce((s,f)=>s+(note.floors[f]||[]).reduce((ss,r)=>ss+(parseInt(r.men)||0),0),0);
+  const floorRows=fl.map(f=>{const rows=(note.floors[f]||[]).filter(r=>r.trade||r.activity);return rows.length?{f,n:rows.length}:null}).filter(Boolean);
+  const todos=(Array.isArray(note.todo)?note.todo.join("\n"):note.todo||"").trim().split("\n").filter(t=>t.trim()).length;
+  return(
+    <div className="note-card" onClick={onClick} style={{background:getThemeBg(note.color||"default",lightMode),border:"1px solid "+(lightMode?"#ddd":note.color&&note.color!=="default"?"#333":"#1e301e"),borderRadius:12,padding:"14px 12px 10px",position:"relative",cursor:"pointer",breakInside:"avoid",marginBottom:12,transition:"box-shadow .2s,transform .2s",minHeight:160}}>
+      <button onClick={e=>{e.stopPropagation();onPin(note.id)}} style={{position:"absolute",top:8,right:8,background:"none",border:"none",cursor:"pointer",color:note.pinned?A:"#333",fontSize:13}}>📌</button>
+      <div style={{fontSize:9,color:"#3a7a3a",letterSpacing:2,textTransform:"uppercase",marginBottom:8}}>Daily Manpower</div>
+      <div style={{fontWeight:900,color:A,fontSize:22,textAlign:"center",letterSpacing:1,padding:"18px 0",lineHeight:1.1}}>{note.date}</div>
+
+      {floorRows.slice(0,5).map(({f,n})=>(
+        <div key={f} style={{display:"flex",gap:6,fontSize:11,color:"#666",marginBottom:2}}>
+          <span style={{color:A,fontWeight:700,minWidth:14}}>{f}</span>
+          <span>{n} trade{n>1?"s":""}</span>
+        </div>
+      ))}
+      {todos>0&&<div style={{fontSize:10,color:"#4a5a4a",borderTop:"1px solid #1a2a1a",paddingTop:6,marginTop:6}}>✓ {todos} to-do</div>}
+      <div style={{display:"flex",alignItems:"center",marginTop:12,paddingTop:10,borderTop:"1px solid #2a2a2a",gap:0}}>
+        <button onClick={e=>{e.stopPropagation();onCopy(note)}} style={{flex:1,background:"none",border:"none",borderRight:"1px solid #333",color:"#4a8adf",fontSize:12,padding:"6px 0",cursor:"pointer",fontWeight:700,textAlign:"center"}}>📄 Copy</button>
+        <button onClick={e=>{e.stopPropagation();onDelete(note.id);}} style={{flex:1,background:"none",border:"none",color:"#df4a4a",fontSize:12,padding:"6px 0",cursor:"pointer",fontWeight:700,textAlign:"center"}}>🗑 Delete</button>
+      </div>
+    </div>
+  );
+}
+
+// ── General Note Card ─────────────────────────────────────────────────────────
+const COLORS=[{n:"default",bg:"#1e1e1e"},{n:"red",bg:"#5c2121"},{n:"orange",bg:"#5c3a1e"},{n:"yellow",bg:"#4a4020"},{n:"green",bg:"#1e3d2a"},{n:"teal",bg:"#1a3a3a"},{n:"blue",bg:"#1a2a4a"},{n:"purple",bg:"#33204a"},{n:"pink",bg:"#4a1e38"}];
+
+function NoteCard({note,onUpdate,onDelete,onPin,onCopy}){
+  const[editing,setEditing]=useState(false);
+  const[draft,setDraft]=useState({title:note.title,body:note.body});
+  const[menu,setMenu]=useState(false);
+  const[clr,setClr]=useState(false);
+  const menuRef=useRef();
+  const bg=(COLORS.find(c=>c.n===note.color)||COLORS[0]).bg;
+
+  useEffect(()=>{
+    const h=e=>{if(menuRef.current&&!menuRef.current.contains(e.target)){setMenu(false);setClr(false);}};
+    document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h);
+  },[]);
+
+  const save=()=>{onUpdate({...note,title:draft.title,body:draft.body});setEditing(false)};
+
+  return(
+    <div className="note-card" style={{background:bg,border:"1px solid #333",borderRadius:12,padding:"14px 14px 10px",position:"relative",cursor:editing?"default":"pointer",breakInside:"avoid",marginBottom:12,transition:"box-shadow .2s,transform .2s"}}
+      onClick={()=>!editing&&setEditing(true)}>
+      <button onClick={e=>{e.stopPropagation();onPin(note.id)}} style={{position:"absolute",top:10,right:36,background:"none",border:"none",cursor:"pointer",color:note.pinned?A:"#555",fontSize:13}}>📌</button>
+      <div ref={menuRef} style={{position:"absolute",top:8,right:8}}>
+        <button onClick={e=>{e.stopPropagation();setMenu(m=>!m);setClr(false)}} style={{background:"none",border:"none",cursor:"pointer",color:"#777",fontSize:18,padding:"2px 4px"}}>⋮</button>
+        {menu&&(
+          <div style={{position:"absolute",right:0,top:28,background:"#222",border:"1px solid #444",borderRadius:8,minWidth:140,zIndex:100,boxShadow:"0 4px 20px rgba(0,0,0,.6)"}} onClick={e=>e.stopPropagation()}>
+            <button onClick={()=>setClr(c=>!c)} style={{display:"block",width:"100%",padding:"9px 14px",background:"none",border:"none",borderBottom:"1px solid #333",color:"#ddd",cursor:"pointer",textAlign:"left",fontSize:13}}>🎨 Color</button>
+            {clr&&<div style={{padding:"6px 10px",display:"flex",gap:5,flexWrap:"wrap"}}>
+              {COLORS.map(c=><button key={c.n} onMouseDown={()=>{onUpdate({...note,color:c.n});setMenu(false)}} style={{width:20,height:20,borderRadius:"50%",background:c.bg,border:note.color===c.n?`2px solid ${A}`:"2px solid #444",cursor:"pointer"}}/>)}
+            </div>}
+            <button onClick={()=>{onCopy(note);setMenu(false)}} style={{display:"block",width:"100%",padding:"9px 14px",background:"none",border:"none",borderBottom:"1px solid #333",color:"#ddd",cursor:"pointer",textAlign:"left",fontSize:13}}>📋 Copy</button>
+            <button onClick={()=>{onDelete(note.id);setMenu(false)}} style={{display:"block",width:"100%",padding:"9px 14px",background:"none",border:"none",color:"#ddd",cursor:"pointer",textAlign:"left",fontSize:13}}>🗑 Delete</button>
+          </div>
+        )}
+      </div>
+      {editing?(
+        <div onClick={e=>e.stopPropagation()}>
+          <input autoFocus value={draft.title} onChange={e=>setDraft(d=>({...d,title:e.target.value}))} placeholder="Title"
+            style={{width:"100%",background:"transparent",border:"none",color:"#f0f0f0",fontSize:15,fontWeight:700,outline:"none",marginBottom:6,paddingRight:60}}/>
+          <textarea value={draft.body} onChange={e=>setDraft(d=>({...d,body:e.target.value}))}
+            onKeyDown={e=>{
+              if(e.key!=="Enter")return;
+              const ta=e.target,val=ta.value,pos=ta.selectionStart;
+              const m=val.slice(val.lastIndexOf("\n",pos-1)+1,pos).match(/^(\s*[-*]\s)/);
+              if(!m)return;e.preventDefault();
+              const nv=val.slice(0,pos)+"\n"+m[1]+val.slice(pos);
+              setDraft(d=>({...d,body:nv}));
+              requestAnimationFrame(()=>{ta.selectionStart=ta.selectionEnd=pos+1+m[1].length});
+            }}
+            placeholder="Note…" rows={4}
+            style={{width:"100%",background:"transparent",border:"none",color:"#ccc",fontSize:13.5,outline:"none",resize:"vertical",lineHeight:1.6}}/>
+          <div style={{display:"flex",justifyContent:"flex-end",marginTop:8}}>
+            <button onClick={save} style={{background:A,color:"#111",border:"none",borderRadius:6,padding:"5px 16px",fontWeight:700,cursor:"pointer",fontSize:13}}>Done</button>
+          </div>
+        </div>
+      ):(
+        <>
+          {note.title&&<div style={{fontWeight:700,fontSize:14.5,color:"#f0f0f0",marginBottom:5,paddingRight:60}}>{note.title}</div>}
+          {note.body&&<div style={{fontSize:13.5,color:"#bbb",lineHeight:1.65,whiteSpace:"pre-wrap",wordBreak:"break-word"}}>{note.body}</div>}
+          {!note.title&&!note.body&&<div style={{color:"#555",fontSize:13,fontStyle:"italic"}}>Empty note</div>}
+        </>
+      )}
+      <div style={{fontSize:10,color:"#555",marginTop:8}}>{new Date(note.updatedAt).toLocaleDateString(undefined,{month:"short",day:"numeric"})}</div>
+    </div>
+  );
+}
+
+function NewNoteBar({onCreate}){
+  const[exp,setExp]=useState(false);
+  const[title,setTitle]=useState("");const[body,setBody]=useState("");
+  const ref=useRef();
+  useEffect(()=>{
+    const h=e=>{
+      if(ref.current&&!ref.current.contains(e.target)){
+        if(title||body)onCreate({title,body});
+        setExp(false);setTitle("");setBody("");
+      }
+    };
+    document.addEventListener("mousedown",h);return()=>document.removeEventListener("mousedown",h);
+  },[title,body]);
+  return(
+    <div ref={ref} style={{background:"var(--card-bg,#1e1e1e)",border:"1px solid var(--border,#333)",borderRadius:12,padding:exp?"14px 16px":"12px 16px",marginBottom:12,cursor:"text"}} onClick={()=>setExp(true)}>
+      {exp&&<input autoFocus value={title} onChange={e=>setTitle(e.target.value)} placeholder="Title"
+        style={{width:"100%",background:"transparent",border:"none",color:"#f0f0f0",fontSize:15,fontWeight:700,outline:"none",marginBottom:8}}/>}
+      <input value={exp?body:""} onChange={e=>setBody(e.target.value)} placeholder="Take a note…" readOnly={!exp}
+        style={{width:"100%",background:"transparent",border:"none",color:exp?"#ccc":"#555",fontSize:14,outline:"none",cursor:"text"}}/>
+    </div>
+  );
+}
+
+// ── App ───────────────────────────────────────────────────────────────────────
+function App(){
+  const[notes,setNotes]=useState(()=>load("mp-notes",[]));
+  const[settings,setSettings]=useState(()=>load("mp-settings",{floors:DEFAULT_FLOORS,sectionTrades:DEFAULT_SECTION_TRADES}));
+  const[search,setSearch]=useState("");
+  const[view,setView]=useState("grid");
+  const[open,setOpen]=useState(null);
+  const[lightMode,setLightMode]=useState(()=>load("mp-lightmode",false));
+  const[confirmDelete,setConfirmDelete]=useState(null);
+  const fbLoaded=React.useRef(false);
+  
+  const[userId,setUserId]=useState(()=>localStorage.getItem("mp-user-id"));
+  const userEmail=localStorage.getItem("mp-user-email")||userId||"";
+
+  useEffect(()=>{save("mp-notes",notes);if(fbLoaded.current&&notes.length>0)fbSave("notes",notes);},[notes]);
+  useEffect(()=>{save("mp-settings",settings);if(fbLoaded.current)fbSave("settings",settings);},[settings]);
+  useEffect(()=>{save("mp-lightmode",lightMode);document.body.className=lightMode?"light":""},[lightMode]);
+
+  const addMp=()=>{const n=emptyNote([],settings.sectionTrades);setNotes(ns=>[n,...ns]);setOpen(n)};
+  const addGeneral=({title,body})=>{
+    if(!title&&!body)return;
+    setNotes(ns=>[{id:uid(),type:"general",title,body,color:"default",pinned:false,createdAt:Date.now(),updatedAt:Date.now()},...ns]);
+  };
+  const saveMp=updated=>{setNotes(ns=>ns.map(n=>n.id===updated.id?{...updated,updatedAt:Date.now()}:n));setOpen(null)};
+  const saveMpSilent=updated=>{setNotes(ns=>ns.map(n=>n.id===updated.id?{...updated,updatedAt:Date.now()}:n));};
+  const updateNote=updated=>setNotes(ns=>ns.map(n=>n.id===updated.id?{...updated,updatedAt:Date.now()}:n));
+  const deleteNote=id=>{setNotes(ns=>ns.filter(n=>n.id!==id));setOpen(null)};
+  const pinNote=id=>setNotes(ns=>ns.map(n=>n.id===id?{...n,pinned:!n.pinned}:n));
+  const copyNote=note=>{
+    const c={...JSON.parse(JSON.stringify(note)),id:uid(),pinned:false,createdAt:Date.now(),updatedAt:Date.now()};
+    if(c.title)c.title+=" (copy)";if(c.type==="manpower")c.date=todayStr();else if(c.date)c.date+=" (copy)";
+    setNotes(ns=>{const i=ns.findIndex(x=>x.id===note.id);const a=[...ns];a.splice(i+1,0,c);return a});
+  };
+  const saveSettings=s=>{setSettings(s);setShowSettings(false)};
+
+  const filtered=notes.filter(n=>{
+    if(!search)return true;
+    const q=search.toLowerCase();
+    if(n.type==="manpower")return n.date?.toLowerCase().includes(q)||(settings.floors||[]).some(f=>(n.floors[f]||[]).some(r=>r.trade?.toLowerCase().includes(q)||r.activity?.toLowerCase().includes(q)));
+    return n.title?.toLowerCase().includes(q)||n.body?.toLowerCase().includes(q);
+  });
+  const pinned=filtered.filter(n=>n.pinned);
+  const others=filtered.filter(n=>!n.pinned);
+  const col=view==="grid"?{columnCount:"auto",columnWidth:160,columnGap:12}:{display:"flex",flexDirection:"column"};
+
+  if(!userId)return <UserSetup onComplete={id=>{FB_USER_ID=id;setUserId(id);}}/> ;
+
+  const renderNote=n=>n.type==="manpower"
+    ?<MpCard key={n.id} note={n} onClick={()=>setOpen(n)} onPin={pinNote} floors={settings.floors||[]} lightMode={lightMode} onCopy={copyNote} onDelete={id=>setConfirmDelete(id)}/>
+    :<NoteCard key={n.id} note={n} onUpdate={updateNote} onDelete={deleteNote} onPin={pinNote} onCopy={copyNote}/>;
+
+  return(
+    <div style={{background:lightMode?"#f5f5f0":"#111",minHeight:"100%",fontFamily:"'Georgia','Times New Roman',serif",color:lightMode?"#1a1a1a":"#f0f0f0",transition:"background 0.3s,color 0.3s"}}>
+      {/* Header */}
+      <div style={{position:"sticky",top:0,zIndex:200,background:lightMode?"#ffffff":"#151515",borderBottom:"1px solid "+(lightMode?"#ddd":"#252525"),padding:"env(safe-area-inset-top, 10px) 12px 10px",display:"flex",alignItems:"center",gap:6,transition:"background 0.3s"}}>
+        <span style={{fontSize:18}}>📋</span>
+        <div style={{display:"flex",flexDirection:"column",flexShrink:0}}>
+          <span style={{fontWeight:800,fontSize:15,letterSpacing:1,color:A}}>Manpower</span>
+          <span style={{fontSize:11,color:"#7ecf7e",letterSpacing:0.3,display:"block"}}>👤 {userEmail}</span>
+        </div>
+
+
+        <div style={{display:"flex",gap:6,marginLeft:"auto",alignItems:"center",flexShrink:0}}>
+<button onClick={()=>setView(v=>v==="grid"?"list":"grid")} style={{background:lightMode?"#e0e0e0":"#2a2a2a",border:"1px solid "+(lightMode?"#ccc":"#3a3a3a"),borderRadius:5,color:A,padding:"5px 9px",cursor:"pointer",fontSize:15}}>
+            {view==="grid"?"⊞":"☰"}
+          </button>
+          <button onClick={()=>setLightMode(m=>!m)} style={{background:"none",border:"none",cursor:"pointer",fontSize:17,padding:"4px 5px"}}>{lightMode?"🌙":"☀️"}</button>
+
+
+        </div>
+      </div>
+
+      {/* Body */}
+      <div style={{maxWidth:860,margin:"0 auto",padding:"18px 14px"}}>
+
+        <div style={{marginBottom:12}}>
+          <button onClick={addMp} style={{background:lightMode?"#e8f5e8":"#132013",border:"1px solid "+(lightMode?"#4a8a4a":"#1e3a1e"),borderRadius:10,color:lightMode?"#2a6a2a":GR,padding:"10px 16px",cursor:"pointer",fontWeight:800,fontSize:13,width:"100%"}}>
+            👷 New Daily Manpower
+          </button>
+        </div>
+        <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="🔍  Search notes…"
+          style={{width:"100%",background:lightMode?"#f0f0f0":"#1e1e1e",border:"1px solid "+(lightMode?"#ddd":"#333"),borderRadius:12,padding:"12px 16px",color:lightMode?"#1a1a1a":"#ccc",fontSize:14,outline:"none",boxSizing:"border-box",marginBottom:12}}/>
+
+        {pinned.length>0&&<>
+          <div style={{fontSize:9,letterSpacing:2,color:"#444",textTransform:"uppercase",marginBottom:8}}>Pinned</div>
+          <div style={col}>{pinned.map(renderNote)}</div>
+          {others.length>0&&<div style={{fontSize:9,letterSpacing:2,color:"#444",textTransform:"uppercase",margin:"16px 0 8px"}}>Others</div>}
+        </>}
+        <div style={col}>{others.map(renderNote)}</div>
+        {filtered.length===0&&<div style={{textAlign:"center",color:"#333",marginTop:60,fontSize:14}}>{search?"No results.":"No notes yet."}</div>}
+        {/* Autocomplete Trades Manager */}
+        {!open&&<div style={{marginTop:"auto",paddingTop:16,borderTop:"1px solid "+(lightMode?"#eee":"#1e1e1e"),position:"fixed",bottom:0,left:0,right:0,background:lightMode?"#f5f5f0":"#111",padding:"12px 16px 20px",zIndex:10}}>
+          <div style={{display:"flex",gap:6,alignItems:"center"}}>
+            <input id="new-trade-input" placeholder="+ Add autocomplete trade…"
+              style={{flex:1,background:"transparent",border:"none",borderBottom:"1px solid "+(lightMode?"#ddd":"#2a2a2a"),padding:"6px 4px",color:lightMode?"#aaa":"#444",fontSize:11,outline:"none"}}
+              onKeyDown={e=>{
+                if(e.key==="Enter"){
+                  const v=e.target.value.trim();
+                  if(!v)return;
+                  const current=load("mp-custom-trades",[]);
+                  if(!current.includes(v)){save("mp-custom-trades",[...current,v]);KNOWN_TRADES=getKnownTrades();setNotes(n=>[...n]);}
+                  e.target.value="";
+                }
+              }}/>
+            <button onMouseDown={()=>{
+              const input=document.getElementById("new-trade-input");
+              const v=input.value.trim();
+              if(!v)return;
+              const current=load("mp-custom-trades",[]);
+              if(!current.includes(v)){save("mp-custom-trades",[...current,v]);KNOWN_TRADES=getKnownTrades();setNotes(n=>[...n]);}
+              input.value="";
+            }} style={{background:"none",border:"none",color:"#555",cursor:"pointer",fontSize:11,padding:"4px 6px"}}>Add</button>
+          </div>
+          <div style={{display:"flex",flexWrap:"wrap",gap:4,marginTop:8}}>
+            {load("mp-custom-trades",[]).map(t=>(
+              <div key={t} style={{display:"flex",alignItems:"center",gap:3,background:"transparent",borderRadius:20,padding:"2px 8px",border:"1px solid "+(lightMode?"#e0e0e0":"#2a2a2a")}}>
+                <span style={{fontSize:10,color:"#666"}}>{t}</span>
+                <button onMouseDown={()=>{
+                  save("mp-custom-trades",load("mp-custom-trades",[]).filter(x=>x!==t));
+                  KNOWN_TRADES=getKnownTrades();setNotes(n=>[...n]);
+                }} style={{background:"none",border:"none",color:"#ff3333",cursor:"pointer",fontSize:10,padding:0,lineHeight:1}}>✕</button>
+              </div>
+            ))}
+          </div>
+        </div>}
+      </div>
+
+      {confirmDelete&&<ConfirmModal message="This cannot be undone." onConfirm={()=>{deleteNote(confirmDelete);setConfirmDelete(null);}} onCancel={()=>setConfirmDelete(null)}/>}
+      {open?.type==="manpower"&&<ManpowerModal note={open} onSave={saveMp} onAutoSave={saveMpSilent} onClose={()=>setOpen(null)} onDelete={deleteNote} onCopy={n=>{copyNote(n);setOpen(null);}} settings={settings} lightMode={lightMode}/>}
+      
+      
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
